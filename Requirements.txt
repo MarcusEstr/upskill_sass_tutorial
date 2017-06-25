@@ -8,3 +8,13 @@ Memberships
 ActiveRecords
 Parameters
 Substitution
+
+Stripe Integration
+* Users should have a Stripe customer token in teh users table.
+* JavaScript should prevent pro form from submitting, when user fills it out, 
+and should send card info to Stripe. STripe will return with a card token.
+* JavaScript should send user fields and card token to our Rails app. Rails app
+should validate teh user fields. Rails app will note whether plan 1 or plan 2.
+* Once validated, Rails should send user info (email, plan id) and card token
+to Stripe servers and Stripe will create a subscription and send back customer
+token. Rails should save customer token and user information to our database.
